@@ -280,7 +280,6 @@ button, input { font: inherit; }
 .quote { width: 36px; height: 36px; fill: #cfe2ff; }
 .review blockquote { margin: 0; font-size: var(--fs-body); line-height: 1.6; }
 .review figcaption { display: flex; align-items: center; gap: 14px; padding-top: 20px; border-top: 1px solid var(--line); }
-.avatar { width: 48px; height: 48px; flex: none; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-size: 16px; font-weight: 600; }
 .review figcaption b { display: block; font-size: 18px; font-weight: 600; }
 .review figcaption div > span { font-size: 15px; color: var(--muted); }
 
