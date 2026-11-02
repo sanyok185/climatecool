@@ -230,6 +230,7 @@ button, input { font: inherit; }
   padding-block: 8px 16px; margin-block: -8px -16px;
 }
 .slider__track::-webkit-scrollbar { display: none; }
+.slider__track:focus { outline: none; }
 .slider__track > * { flex: 0 0 calc((100% - 24px * (var(--per) - 1)) / var(--per)); scroll-snap-align: start; }
 .slider__track--3 { --per: 3; }
 @media (max-width: 1080px) { .slider__track--3 { --per: 2; } }
@@ -281,7 +282,7 @@ button, input { font: inherit; }
 .review figcaption { display: flex; align-items: center; gap: 14px; padding-top: 20px; border-top: 1px solid var(--line); }
 .avatar { width: 48px; height: 48px; flex: none; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-size: 16px; font-weight: 600; }
 .review figcaption b { display: block; font-size: 18px; font-weight: 600; }
-.review figcaption span { font-size: 15px; color: var(--muted); }
+.review figcaption div > span { font-size: 15px; color: var(--muted); }
 
 /* Lead */
 .lead { position: relative; overflow: hidden; border-radius: var(--radius-lg); background: var(--accent); color: #fff; isolation: isolate; }
