@@ -356,3 +356,11 @@ a.contact:hover .contact__icon { background: rgba(111, 177, 255, .18); }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
   .js [data-reveal] { opacity: 1; translate: none; }
 }
+
+@media (max-width: 480px) {
+  .btn { white-space: nowrap; max-width: 100%; padding-inline: 18px; gap: 8px; font-size: clamp(14px, 4.4vw, 16px); }
+  .banner__body { padding-inline: 16px; }
+  .btn .icon { font-size: 20px; }
+  .checks { display: grid; justify-content: center; justify-items: start; gap: 10px; text-align: left; }
+}
+@media (max-width: 359px) { .btn .icon { display: none; } }
