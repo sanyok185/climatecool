@@ -163,6 +163,21 @@ button, input { font: inherit; }
 .problem__arrow::before, .problem__arrow::after { content: ''; flex: 1; height: 1px; background: #e3e8ef; }
 .problem__arrow span { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-size: 20px; }
 .problem:hover .problem__arrow span { animation: nudge .8s var(--ease); }
+@media (max-width: 640px) {
+  .problem { display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; padding: 20px; }
+  .problem > * { grid-column: 1 / -1; }
+  .problem > .icon-box { grid-column: 1; grid-row: span 2; align-self: center; }
+  .problem > .problem__block:nth-child(2) { display: contents; }
+  .problem > .problem__block:nth-child(2) > :not(p) { grid-column: 2; justify-self: start; }
+  .problem > .problem__block:nth-child(2) > p { grid-column: 1 / -1; }
+  .problem__arrow { margin-block: 4px; }
+  .problem .icon-box { width: 44px; height: 44px; border-radius: 12px; font-size: 22px; }
+  .problem__block { gap: 8px; }
+  .problem .tag { padding: 4px 10px; font-size: 12px; }
+  .problem .h3 { font-size: 18px; }
+  .problem .text { font-size: 15px; }
+  .problem__arrow span { width: 32px; height: 32px; font-size: 16px; }
+}
 .note { display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 720px; text-align: center; }
 
 /* Services */
