@@ -107,7 +107,7 @@ button, input { font: inherit; }
 .header { position: relative; z-index: 20; }
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; padding-top: 16px; }
 .logo { display: block; flex: none; }
-.logo img { height: clamp(44px, 4vw, 56px); width: auto; aspect-ratio: 3 / 1; object-fit: contain; }
+.logo img { height: clamp(56px, 2vw + 50px, 64px); width: auto; aspect-ratio: 3 / 1; object-fit: contain; }
 .nav { display: flex; gap: clamp(20px, 3vw, 40px); }
 .nav a { position: relative; color: #fff; text-decoration: none; font-size: 18px; font-weight: 500; padding-block: 6px; }
 .nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .3s var(--ease); }
