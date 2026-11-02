@@ -92,6 +92,30 @@
     new ResizeObserver(buildDots).observe(track);
   });
 
+  /* Stacking cards: previous card shrinks & dims as the next one covers it */
+  $$('[data-stack]').forEach(stack => {
+    const cards = [...stack.children];
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || cards.length < 2) return;
+    let ticking = false;
+    const render = () => {
+      ticking = false;
+      cards.forEach((card, i) => {
+        const next = cards[i + 1];
+        if (!next) return;
+        const a = card.getBoundingClientRect();
+        const b = next.getBoundingClientRect();
+        const p = Math.min(1, Math.max(0, 1 - (b.top - a.top) / a.height));
+        const depth = cards.length - 1 - i;
+        card.style.scale = 1 - p * 0.04 * depth;
+        card.style.filter = p ? `brightness(${1 - p * 0.04 * depth})` : '';
+      });
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(render); } };
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+    render();
+  });
+
   /* Modal */
   const modal = document.getElementById('modal');
   const closeModal = () => {

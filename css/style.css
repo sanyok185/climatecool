@@ -170,7 +170,15 @@ button, input { font: inherit; }
 .split__aside { flex: 1 1 340px; max-width: 440px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 @media (min-width: 900px) { .split__aside { position: sticky; top: 32px; } }
 .split__main { flex: 1 1 520px; display: flex; flex-direction: column; gap: clamp(16px, 2vw, 24px); min-width: 0; }
-.service { display: flex; flex-direction: column; gap: 20px; border-radius: clamp(18px, 2vw, 24px); min-height: clamp(0px, 18vw, 260px); }
+.service {
+  position: sticky; top: calc(clamp(16px, 4vw, 32px) + var(--i) * clamp(12px, 1.6vw, 20px));
+  display: flex; flex-direction: column; gap: 20px;
+  border-radius: clamp(18px, 2vw, 24px); min-height: clamp(200px, 18vw, 260px);
+  box-shadow: 0 -6px 24px rgba(31, 38, 51, .08);
+  transform-origin: 50% 0; will-change: scale;
+}
+.service:hover { transform: none; box-shadow: 0 -6px 24px rgba(31, 38, 51, .08); }
+.split__main[data-stack] { gap: clamp(16px, 3vw, 32px); }
 .service__head { display: flex; align-items: center; gap: 20px; }
 .service h3 { font-size: clamp(22px, 1.2rem + .6vw, 28px); font-weight: 600; line-height: 1.2; }
 
@@ -208,7 +216,7 @@ button, input { font: inherit; }
 @media (max-width: 720px) {
   .slider__track, .slider__track--3 { --per: 1; gap: 16px; }
   .slider__track > * { flex-basis: 88%; }
-  .slider__arrow { display: none; }
+  .slider .slider__arrow { display: none; }
 }
 .slider__arrow {
   flex: none; width: 52px; height: 52px; border-radius: 50%;
