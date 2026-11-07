@@ -23,11 +23,6 @@
         const sibs = [...target.parentElement.children].filter(el => el.hasAttribute('data-reveal'));
         target.style.setProperty('--d', `${Math.min(sibs.indexOf(target), 5) * 0.08}s`);
         target.classList.add('is-in');
-        target.addEventListener('transitionend', e => {
-          if (e.target !== target) return;
-          target.removeAttribute('data-reveal');
-          target.style.removeProperty('--d');
-        });
         io.unobserve(target);
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
