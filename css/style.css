@@ -280,8 +280,8 @@ button, input { font: inherit; }
 /* Process */
 .step { display: flex; flex-direction: column; gap: 24px; }
 .step__text { display: flex; flex-direction: column; gap: 10px; }
-.step__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.step__num { font-size: 13px; font-weight: 600; letter-spacing: .08em; color: var(--accent); }
+.step__head { display: flex; align-items: center; gap: 16px; }
+.step__num { font-size: clamp(15px, .85rem + .25vw, 17px); font-weight: 600; letter-spacing: .08em; color: var(--accent); }
 .step--dark { background: var(--dark); border-color: var(--dark); color: #fff; }
 .step--dark .step__num { color: var(--accent-light); }
 .step--dark .text { color: rgba(255, 255, 255, .72); }
