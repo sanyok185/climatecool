@@ -391,3 +391,17 @@ a.contact:hover .contact__icon { background: rgba(111, 177, 255, .18); }
   .checks { display: grid; justify-content: center; justify-items: start; gap: 10px; text-align: left; }
 }
 @media (max-width: 359px) { .btn .icon { display: none; } }
+
+@media (max-width: 720px) {
+  .case__media { height: 130px; }
+  .case .divider { display: none; }
+  .case__body { gap: 12px; padding: 16px 18px 18px; }
+  .case__title { gap: 8px; }
+  .case .h3 { font-size: 18px; }
+  .case .tag { padding: 4px 10px; font-size: 12px; }
+  .tags { gap: 6px; }
+  .case dl { gap: 10px; }
+  .case dt { font-size: 11px; margin-bottom: 2px; }
+  .case dd { font-size: 14px; line-height: 1.45; }
+  .case__result { padding: 10px 12px; border-radius: 10px; }
+}
